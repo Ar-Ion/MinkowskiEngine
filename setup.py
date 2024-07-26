@@ -173,7 +173,7 @@ if sys.platform == "win32":
     else:
         CC_FLAGS += ["/sdl", "/permissive-"]
 else:
-    CC_FLAGS += ["-fopenmp"]
+    pass#CC_FLAGS += ["-fopenmp"] does not work with nvidia jetpack 6 nvcc
 
 if "darwin" in platform:
     CC_FLAGS += ["-stdlib=libc++", "-std=c++17"]
