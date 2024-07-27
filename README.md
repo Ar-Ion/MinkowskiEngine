@@ -10,6 +10,10 @@
 
 The Minkowski Engine is an auto-differentiation library for sparse tensors. It supports all standard neural network layers such as convolution, pooling, unpooling, and broadcasting operations for sparse tensors. For more information, please visit [the documentation page](http://nvidia.github.io/MinkowskiEngine/overview.html).
 
+## Fork statement of purpose
+
+The last officially supported CUDA version of the Minkowski Engine is CUDA 11. This repo aims at porting the existing code and making it compatible with CUDA version 12.2 with pytorch 2.1.1.
+
 ## News
 
 - 2021-08-11 Docker installation instruction added
