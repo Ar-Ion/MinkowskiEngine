@@ -14,6 +14,8 @@ The Minkowski Engine is an auto-differentiation library for sparse tensors. It s
 
 The last officially supported CUDA version of the Minkowski Engine is CUDA 11. This repo aims at porting the existing code and making it compatible with CUDA version 12.2 with pytorch 2.1.1.
 
+Build procedure: `pip install .`
+
 ## News
 
 - 2021-08-11 Docker installation instruction added

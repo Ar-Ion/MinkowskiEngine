@@ -260,7 +260,9 @@ SOURCE_SETS = {
             "pruning_gpu.cu",
             "interpolation_gpu.cu",
             "spmm.cu",
-            "gpu.cu"
+            "gpu.cu",
+            "quantization.cpp",
+            "direct_max_pool.cpp",
         ],
         ["pybind/minkowski.cu"],
         [],
@@ -287,10 +289,13 @@ else:
 
 if debug:
     CC_FLAGS += ["-g", "-DDEBUG"]
-    NVCC_FLAGS += ["-g", "-DDEBUG", "-Xcompiler=-fno-gnu-unique"]
+    NVCC_FLAGS += ["-g", "-DDEBUG"]
 else:
     CC_FLAGS += ["-O3"]
-    NVCC_FLAGS += ["-O3", "-Xcompiler=-fno-gnu-unique"]
+    NVCC_FLAGS += ["-O3"]
+
+CC_FLAGS += ["--forward-unknown-opts", "-Xcompiler=-fPIC"]
+NVCC_FLAGS += ["--forward-unknown-opts", "-Xcompiler=-fPIC"]
 
 if "MAX_JOBS" not in os.environ and os.cpu_count() > MAX_COMPILATION_THREADS:
     # Clip the num compilation thread to 8
