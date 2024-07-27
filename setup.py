@@ -175,7 +175,7 @@ if sys.platform == "win32":
 else:
     pass#CC_FLAGS += ["-fopenmp"] does not work with nvidia jetpack 6 nvcc
 
-if "darwin" in platform: 
+if "darwin" in platform:
     CC_FLAGS += ["-stdlib=libc++", "-std=c++17"]
 
 NVCC_FLAGS += ["--expt-relaxed-constexpr", "--expt-extended-lambda"]
